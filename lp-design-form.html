@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="LOCAL WEB DESIGNの無料LPデザイン案ヒアリングフォームです。">
+  <title>無料LPデザイン案ヒアリング | LOCAL WEB DESIGN</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="./assets/images/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="./assets/images/favicon.svg">
+  <link rel="shortcut icon" href="./assets/images/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/apple-touch-icon.png">
+  <link rel="manifest" href="./assets/images/site.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body class="sub-page">
+  <header class="site-header sub-header">
+    <a class="site-logo" href="./index.html" aria-label="LOCAL WEB DESIGN トップページ">
+      <img src="./assets/images/logo.webp" alt="" class="logo-mark">
+      <span class="site-name">LOCAL WEB DESIGN</span>
+    </a>
+    <button class="menu-button" type="button" aria-label="メニューを開閉する" aria-controls="global-nav" aria-expanded="false">
+      <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+    </button>
+    <nav class="global-nav" id="global-nav" aria-label="グローバルナビゲーション">
+      <a href="./index.html#features">サービスの特徴</a>
+      <a href="./index.html#flow">制作の流れ</a>
+      <a href="./index.html#portfolio">制作実績</a>
+      <a class="nav-contact" href="./contact.html">お問い合わせ</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero form-page-hero" aria-labelledby="form-title">
+      <p class="section-kicker">FREE DESIGN PROPOSAL</p>
+      <h1 id="form-title">無料LPデザイン案<br class="mobile-only">ヒアリングフォーム</h1>
+      <p>分からない項目は「おまかせ」で大丈夫です。<br>入力内容をもとに、LPデザイン画像を無料で3案作成します。</p>
+      <p class="free-scope-note">無料対象はLPデザイン画像3案の初回提案です。<br>ホームページの実装・公開・追加修正は別途お見積りとなります。</p>
+    </section>
+
+    <div class="form-layout">
+      <form class="design-form" id="lp-design-form" action="https://formspree.io/f/mrevlqrv" method="POST">
+        <input type="hidden" name="_subject" value="無料LPデザイン案のお申し込み">
+        <input type="hidden" name="概算制作費" id="estimate-input" value="0円">
+        <ol class="step-nav" aria-label="フォームの流れ">
+          <li><span>1</span>基本情報</li>
+          <li><span>2</span>デザイン</li>
+          <li><span>3</span>掲載内容</li>
+          <li><span>4</span>写真・素材</li>
+          <li><span>5</span>オプション</li>
+          <li><span>6</span>確認</li>
+        </ol>
+
+        <section class="form-step" aria-labelledby="step-1-title">
+          <div class="form-step__heading"><span>STEP 1</span><h2 id="step-1-title">基本情報</h2></div>
+          <div class="form-grid">
+            <label class="field">
+              <span>店名・サービス名 <em>必須</em></span>
+              <input type="text" name="service_name" autocomplete="organization" required>
+            </label>
+            <label class="field">
+              <span>業種 <em>必須</em></span>
+              <select name="industry" required>
+                <option value="">選択してください</option>
+                <option>飲食店</option><option>美容室・サロン</option><option>整骨院・整体院</option>
+                <option>工務店・建築</option><option>士業</option><option>教室・スクール</option>
+                <option>小売・EC</option><option>地域サービス</option><option>その他</option>
+              </select>
+            </label>
+          </div>
+          <fieldset class="field-group">
+            <legend>LPの目的 <em>必須</em></legend>
+            <div class="choice-grid">
+              <label><input type="radio" name="lp_goal" value="問い合わせを増やしたい" required><span>問い合わせを増やしたい</span></label>
+              <label><input type="radio" name="lp_goal" value="予約を増やしたい"><span>予約を増やしたい</span></label>
+              <label><input type="radio" name="lp_goal" value="商品・サービスを販売したい"><span>商品・サービスを販売したい</span></label>
+              <label><input type="radio" name="lp_goal" value="お店の魅力を伝えたい"><span>お店の魅力を伝えたい</span></label>
+              <label><input type="radio" name="lp_goal" value="採用につなげたい"><span>採用につなげたい</span></label>
+              <label><input type="radio" name="lp_goal" value="まだ決まっていない"><span>まだ決まっていない</span></label>
+              <label><input type="radio" name="lp_goal" value="おまかせしたい"><span>おまかせしたい</span></label>
+            </div>
+          </fieldset>
+          <fieldset class="field-group">
+            <legend>ターゲット</legend>
+            <div class="choice-grid">
+              <label><input type="checkbox" name="target[]" value="地域の人"><span>地域の人</span></label>
+              <label><input type="checkbox" name="target[]" value="女性向け"><span>女性向け</span></label>
+              <label><input type="checkbox" name="target[]" value="ファミリー向け"><span>ファミリー向け</span></label>
+              <label><input type="checkbox" name="target[]" value="高齢者向け"><span>高齢者向け</span></label>
+              <label><input type="checkbox" name="target[]" value="法人向け"><span>法人向け</span></label>
+              <label><input type="checkbox" name="target[]" value="初めて利用する人"><span>初めて利用する人</span></label>
+              <label><input type="checkbox" name="target[]" value="おまかせ"><span>おまかせ</span></label>
+            </div>
+          </fieldset>
+          <div class="form-grid">
+            <label class="field">
+              <span>メールアドレス <em>必須</em></span>
+              <input type="email" name="email" autocomplete="email" required>
+            </label>
+            <label class="field">
+              <span>電話番号（任意）</span>
+              <input type="tel" name="phone" autocomplete="tel">
+            </label>
+          </div>
+          <div class="form-grid">
+            <label class="field">
+              <span>制作予定時期</span>
+              <select name="制作予定時期">
+                <option value="">選択してください</option><option>すぐに相談したい</option><option>1か月以内</option><option>3か月以内</option>
+                <option>半年以内</option><option>時期は未定</option><option>情報収集のみ</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>想定している制作予算</span>
+              <select name="想定制作予算">
+                <option value="">選択してください</option><option>5万円未満</option><option>5万円〜10万円</option><option>10万円〜20万円</option>
+                <option>20万円以上</option><option>まだ決めていない</option><option>無料範囲だけ希望</option>
+              </select>
+            </label>
+          </div>
+          <label class="field">
+            <span>現在の検討状況</span>
+            <select name="現在の検討状況">
+              <option value="">選択してください</option><option>依頼先を探している</option><option>見積りを比較している</option>
+              <option>まずはデザイン案を見て判断したい</option><option>将来的に検討している</option><option>情報収集のみ</option>
+            </select>
+          </label>
+        </section>
+
+        <section class="form-step" aria-labelledby="step-2-title">
+          <div class="form-step__heading"><span>STEP 2</span><h2 id="step-2-title">デザインの希望</h2></div>
+          <p class="field-help">参考にしたいサイトがあればURLを入力してください。色合い、余白感、写真の雰囲気、ボタンのデザインなど、好きな部分も分かる範囲で入力してください。</p>
+          <label class="field"><span>参考にしたいサイトのURL</span><input type="url" name="reference_url" placeholder="https://example.com"></label>
+          <label class="field"><span>参考サイトのどこを参考にしたいか</span><textarea name="reference_points" rows="3"></textarea></label>
+          <fieldset class="field-group">
+            <legend>イメージカラー</legend>
+            <div class="choice-grid compact">
+              <label><input type="radio" name="image_color" value="青系"><span>青系</span></label><label><input type="radio" name="image_color" value="緑系"><span>緑系</span></label>
+              <label><input type="radio" name="image_color" value="赤系"><span>赤系</span></label><label><input type="radio" name="image_color" value="オレンジ系"><span>オレンジ系</span></label>
+              <label><input type="radio" name="image_color" value="ベージュ系"><span>ベージュ系</span></label><label><input type="radio" name="image_color" value="黒・グレー系"><span>黒・グレー系</span></label>
+              <label><input type="radio" name="image_color" value="白ベース"><span>白ベース</span></label><label><input type="radio" name="image_color" value="おまかせ"><span>おまかせ</span></label>
+              <label><input type="radio" name="image_color" value="その他"><span>その他</span></label>
+            </div>
+          </fieldset>
+          <fieldset class="field-group">
+            <legend>希望する雰囲気</legend>
+            <div class="choice-grid compact">
+              <label><input type="checkbox" name="mood[]" value="シンプル"><span>シンプル</span></label><label><input type="checkbox" name="mood[]" value="ナチュラル"><span>ナチュラル</span></label>
+              <label><input type="checkbox" name="mood[]" value="高級感"><span>高級感</span></label><label><input type="checkbox" name="mood[]" value="かわいい"><span>かわいい</span></label>
+              <label><input type="checkbox" name="mood[]" value="和風"><span>和風</span></label><label><input type="checkbox" name="mood[]" value="スタイリッシュ"><span>スタイリッシュ</span></label>
+              <label><input type="checkbox" name="mood[]" value="親しみやすい"><span>親しみやすい</span></label><label><input type="checkbox" name="mood[]" value="信頼感"><span>信頼感</span></label>
+              <label><input type="checkbox" name="mood[]" value="明るい"><span>明るい</span></label><label><input type="checkbox" name="mood[]" value="落ち着いた雰囲気"><span>落ち着いた雰囲気</span></label>
+              <label><input type="checkbox" name="mood[]" value="おまかせ"><span>おまかせ</span></label>
+            </div>
+          </fieldset>
+        </section>
+
+        <section class="form-step" aria-labelledby="step-3-title">
+          <div class="form-step__heading"><span>STEP 3</span><h2 id="step-3-title">掲載内容</h2></div>
+          <p class="field-help">例：地域密着、夫婦で運営、素材にこだわっている、初めての方でも安心、価格が分かりやすい、完全予約制 など</p>
+          <label class="field"><span>お店・サービスの特長 <em>必須</em></span><textarea name="service_features" rows="4" required></textarea></label>
+          <div class="form-grid">
+            <label class="field"><span>他社との違い</span><textarea name="difference" rows="3"></textarea></label>
+            <label class="field"><span>こだわっていること</span><textarea name="commitment" rows="3"></textarea></label>
+          </div>
+          <label class="field"><span>掲載したい内容</span><textarea name="desired_content" rows="3"></textarea></label>
+          <fieldset class="field-group">
+            <legend>希望するページ構成</legend>
+            <div class="choice-grid compact">
+              <label><input type="radio" name="page_plan" value="おまかせ" checked><span>おまかせ</span></label>
+              <label><input type="radio" name="page_plan" value="自分で指定する"><span>自分で指定する</span></label>
+            </div>
+            <div class="choice-grid page-sections" id="page-sections" hidden>
+              <label><input type="checkbox" name="sections[]" value="メインビジュアル"><span>メインビジュアル</span></label><label><input type="checkbox" name="sections[]" value="特長・こだわり"><span>特長・こだわり</span></label>
+              <label><input type="checkbox" name="sections[]" value="サービス内容"><span>サービス内容</span></label><label><input type="checkbox" name="sections[]" value="商品・メニュー"><span>商品・メニュー</span></label>
+              <label><input type="checkbox" name="sections[]" value="料金"><span>料金</span></label><label><input type="checkbox" name="sections[]" value="お客様の声"><span>お客様の声</span></label>
+              <label><input type="checkbox" name="sections[]" value="よくある質問"><span>よくある質問</span></label><label><input type="checkbox" name="sections[]" value="店舗情報"><span>店舗情報</span></label>
+              <label><input type="checkbox" name="sections[]" value="アクセス"><span>アクセス</span></label><label><input type="checkbox" name="sections[]" value="お問い合わせ"><span>お問い合わせ</span></label>
+              <label><input type="checkbox" name="sections[]" value="予約導線"><span>予約導線</span></label>
+            </div>
+          </fieldset>
+          <fieldset class="field-group">
+            <legend>メインの誘導先</legend>
+            <div class="choice-grid compact">
+              <label><input type="radio" name="primary_action" value="電話"><span>電話</span></label><label><input type="radio" name="primary_action" value="LINE"><span>LINE</span></label>
+              <label><input type="radio" name="primary_action" value="メールフォーム"><span>メールフォーム</span></label><label><input type="radio" name="primary_action" value="予約サイト"><span>予約サイト</span></label>
+              <label><input type="radio" name="primary_action" value="Instagram"><span>Instagram</span></label><label><input type="radio" name="primary_action" value="Googleマップ"><span>Googleマップ</span></label>
+              <label><input type="radio" name="primary_action" value="資料請求"><span>資料請求</span></label><label><input type="radio" name="primary_action" value="商品購入"><span>商品購入</span></label>
+              <label><input type="radio" name="primary_action" value="相談したい"><span>相談したい</span></label>
+            </div>
+          </fieldset>
+        </section>
+
+        <section class="form-step" aria-labelledby="step-4-title">
+          <div class="form-step__heading"><span>STEP 4</span><h2 id="step-4-title">写真・素材</h2></div>
+          <fieldset class="field-group">
+            <legend>写真のご用意状況</legend>
+            <div class="choice-grid">
+              <label><input type="radio" name="photo_status" value="写真あり。申し込み後に送付したい"><span>写真あり。申し込み後に送付したい</span></label><label><input type="radio" name="photo_status" value="写真はまだない"><span>写真はまだない</span></label>
+              <label><input type="radio" name="photo_status" value="フリー素材・AI画像で提案してほしい"><span>フリー素材・AI画像で提案してほしい</span></label><label><input type="radio" name="photo_status" value="相談したい"><span>相談したい</span></label>
+            </div>
+          </fieldset>
+          <p class="field-help">写真やロゴ画像は、申し込み後にメールまたはLINEでご案内します。</p>
+        </section>
+
+        <section class="form-step" aria-labelledby="step-5-title">
+          <div class="form-step__heading"><span>STEP 5</span><h2 id="step-5-title">有料オプション</h2></div>
+          <p class="field-help">必要なものだけお選びください。選択内容はページ下部の概算制作費に反映されます。</p>
+          <fieldset class="field-group option-group">
+            <legend>メイン画像追加（いずれか1つ）</legend>
+            <div class="option-grid">
+              <label><input class="paid-option" type="radio" name="main_image_option" value="メイン画像追加 1枚" data-price="3000"><span><strong>メイン画像追加 1枚</strong><small>メイン画像を1枚追加作成</small><b>+3,000円</b></span></label>
+              <label><input class="paid-option" type="radio" name="main_image_option" value="メイン画像追加 2枚" data-price="6000"><span><strong>メイン画像追加 2枚</strong><small>メイン画像を2枚追加作成</small><b>+6,000円</b></span></label>
+              <label><input class="paid-option" type="radio" name="main_image_option" value="メイン画像追加 3枚" data-price="9000"><span><strong>メイン画像追加 3枚</strong><small>メイン画像を3枚追加作成</small><b>+9,000円</b></span></label>
+            </div>
+          </fieldset>
+          <div class="option-grid">
+            <label><input class="paid-option" type="checkbox" name="options[]" value="商品画像スライダー" data-price="5000"><span><strong>商品画像スライダー</strong><small>商品・メニュー画像をスライダー表示</small><b>+5,000円</b></span></label>
+            <label><input class="paid-option" type="checkbox" name="options[]" value="お問い合わせフォーム" data-price="8000"><span><strong>お問い合わせフォーム</strong><small>お問い合わせフォームを追加</small><b>+8,000円</b></span></label>
+            <label><input class="paid-option" type="checkbox" name="options[]" value="Googleマップ" data-price="3000"><span><strong>Googleマップ</strong><small>Googleマップを埋め込む</small><b>+3,000円</b></span></label>
+            <label><input class="paid-option" type="checkbox" name="options[]" value="スマホ固定ボタン" data-price="5000"><span><strong>スマホ固定ボタン</strong><small>スマホ下部に固定ボタンを追加</small><b>+5,000円</b></span></label>
+            <label><input class="paid-option" type="checkbox" name="options[]" value="文章作成サポート" data-price="10000"><span><strong>文章作成サポート</strong><small>LP内の文章作成をサポート</small><b>+10,000円</b></span></label>
+            <label><input class="paid-option" type="checkbox" name="options[]" value="AI素材画像作成" data-price="5000"><span><strong>AI素材画像作成</strong><small>写真がない部分のAI素材画像を作成</small><b>+5,000円</b></span></label>
+            <label><input class="paid-option" type="checkbox" name="options[]" value="ロゴ・ファビコン作成" data-price="10000"><span><strong>ロゴ・ファビコン作成</strong><small>ロゴまたはファビコンを作成</small><b>+10,000円</b></span></label>
+          </div>
+        </section>
+
+        <section class="form-step review-step" aria-labelledby="step-6-title">
+          <div class="form-step__heading"><span>STEP 6</span><h2 id="step-6-title">確認・概算制作費</h2></div>
+          <div class="free-includes">
+            <h3>無料で作成される内容</h3>
+            <ul><li>LPデザイン画像：3案</li><li>初回構成案</li><li>簡単なデザイン方向性の提案</li></ul>
+          </div>
+          <div class="estimate-card">
+            <div>
+              <h3>選択中の有料オプション</h3>
+              <ul id="selected-options"><li>選択されていません</li></ul>
+            </div>
+            <p>概算制作費<strong id="estimate-price" aria-live="polite">0円</strong></p>
+          </div>
+          <p class="estimate-note">概算制作費は、選択内容をもとにした目安です。正式なお見積りは内容確認後にご案内します。<br>※無料で作成する内容は、LPデザイン画像3案の初回提案です。ホームページ実装や公開作業は別途お見積りとなります。</p>
+          <label class="scope-agreement">
+            <input type="checkbox" name="無料対象範囲への同意" value="同意しました" required>
+            <span>無料対象がLPデザイン画像3案の初回提案であり、ホームページ実装・公開・追加修正は別途見積りとなることに同意します <em>必須</em></span>
+          </label>
+          <button class="submit-button design-submit" type="submit">この内容で相談する</button>
+          <div class="submit-message" id="submit-message" role="status" tabindex="-1" hidden></div>
+        </section>
+      </form>
+      <a class="back-link" href="./index.html">トップページへ戻る</a>
+    </div>
+  </main>
+
+  <footer class="site-footer"><small>&copy; LOCAL WEB DESIGN</small></footer>
+  <script src="./assets/js/main.js"></script>
+</body>
+</html>

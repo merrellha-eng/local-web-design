@@ -31,3 +31,90 @@ if (contactForm) {
     window.location.href = './thanks.html';
   });
 }
+
+const designForm = document.getElementById('lp-design-form');
+
+if (designForm) {
+  const paidOptions = designForm.querySelectorAll('.paid-option');
+  const selectedOptions = document.getElementById('selected-options');
+  const estimatePrice = document.getElementById('estimate-price');
+  const pageSections = document.getElementById('page-sections');
+  const submitMessage = document.getElementById('submit-message');
+  const estimateInput = document.getElementById('estimate-input');
+  const escapeHtml = (value) => value.replace(/[&<>"']/g, (character) => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#039;',
+  })[character]);
+
+  const updateEstimate = () => {
+    const checkedOptions = [...paidOptions].filter((option) => option.checked);
+    const total = checkedOptions.reduce((sum, option) => sum + Number(option.dataset.price), 0);
+
+    selectedOptions.innerHTML = checkedOptions.length
+      ? checkedOptions.map((option) => `<li>${option.value}（+${Number(option.dataset.price).toLocaleString('ja-JP')}円）</li>`).join('')
+      : '<li>選択されていません</li>';
+    estimatePrice.textContent = `${total.toLocaleString('ja-JP')}円`;
+    estimateInput.value = estimatePrice.textContent;
+  };
+
+  paidOptions.forEach((option) => option.addEventListener('change', updateEstimate));
+
+  designForm.querySelectorAll('[name="page_plan"]').forEach((option) => {
+    option.addEventListener('change', () => {
+      pageSections.hidden = option.value !== '自分で指定する' || !option.checked;
+    });
+  });
+
+  designForm.addEventListener('submit', (event) => {
+    if (!designForm.checkValidity()) {
+      event.preventDefault();
+      designForm.reportValidity();
+      return;
+    }
+
+    // 仮のFORM_IDが残っている間だけ送信せず、画面内に確認内容を表示します。
+    if (!designForm.action.endsWith('/FORM_ID')) {
+      return;
+    }
+
+    event.preventDefault();
+    const serviceName = designForm.elements.service_name.value;
+    const industry = designForm.elements.industry.value;
+    const goal = designForm.querySelector('[name="lp_goal"]:checked').value;
+
+    submitMessage.innerHTML = `
+      <strong>入力内容を確認しました。送信機能は現在準備中です。</strong>
+      <span>FormspreeのフォームIDを設定すると、この内容を送信できます。</span>
+      <dl><div><dt>店名・サービス名</dt><dd>${escapeHtml(serviceName)}</dd></div><div><dt>業種</dt><dd>${escapeHtml(industry)}</dd></div><div><dt>LPの目的</dt><dd>${escapeHtml(goal)}</dd></div><div><dt>概算制作費</dt><dd>${estimatePrice.textContent}</dd></div></dl>
+    `;
+    submitMessage.hidden = false;
+    submitMessage.focus();
+  });
+}
+
+const precheckInputs = document.querySelectorAll('.precheck-input');
+const precheckButton = document.getElementById('precheck-button');
+const precheckStatus = document.getElementById('precheck-status');
+
+if (precheckInputs.length && precheckButton && precheckStatus) {
+  const updatePrecheck = () => {
+    const isComplete = [...precheckInputs].every((input) => input.checked);
+
+    precheckButton.classList.toggle('is-disabled', !isComplete);
+    precheckButton.setAttribute('aria-disabled', String(!isComplete));
+    precheckButton.tabIndex = isComplete ? 0 : -1;
+    precheckStatus.textContent = isComplete
+      ? '確認が完了しました。本申し込みフォームへ進めます。'
+      : 'すべての項目をご確認ください。';
+  };
+
+  precheckInputs.forEach((input) => input.addEventListener('change', updatePrecheck));
+  precheckButton.addEventListener('click', (event) => {
+    if (precheckButton.getAttribute('aria-disabled') === 'true') {
+      event.preventDefault();
+    }
+  });
+}
