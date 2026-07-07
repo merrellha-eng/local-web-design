@@ -2,17 +2,39 @@ const menuButton = document.querySelector('.menu-button');
 const globalNav = document.getElementById('global-nav');
 
 if (menuButton && globalNav) {
+  const menuIcon = menuButton.querySelector('.material-symbols-outlined');
+  const closeMenu = () => {
+    menuButton.setAttribute('aria-expanded', 'false');
+    globalNav.classList.remove('is-open');
+    if (menuIcon) menuIcon.textContent = 'menu';
+  };
+
   menuButton.addEventListener('click', () => {
     const expanded = menuButton.getAttribute('aria-expanded') === 'true';
     menuButton.setAttribute('aria-expanded', String(!expanded));
     globalNav.classList.toggle('is-open', !expanded);
+    if (menuIcon) menuIcon.textContent = expanded ? 'menu' : 'close';
   });
 
   globalNav.addEventListener('click', (event) => {
     if (event.target instanceof HTMLAnchorElement) {
-      menuButton.setAttribute('aria-expanded', 'false');
-      globalNav.classList.remove('is-open');
+      closeMenu();
     }
+  });
+
+  document.addEventListener('click', (event) => {
+    if (!globalNav.contains(event.target) && !menuButton.contains(event.target)) closeMenu();
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      closeMenu();
+      menuButton.focus();
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 980) closeMenu();
   });
 }
 

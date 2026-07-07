@@ -1299,7 +1299,18 @@ h1 {
 
 @media (max-width: 980px) {
   .site-header {
-    padding: 22px;
+    position: fixed;
+    min-height: 82px;
+    padding: 16px max(4vw, 18px);
+    border-bottom: 1px solid rgba(185, 147, 77, 0.18);
+    background: rgba(12, 22, 22, 0.88);
+    box-shadow: 0 10px 30px rgba(4, 12, 12, 0.16);
+    backdrop-filter: blur(14px);
+    transition: background 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .sub-page main {
+    padding-top: 82px;
   }
 
   .site-name {
@@ -1312,41 +1323,105 @@ h1 {
   }
 
   .menu-button {
-    position: fixed;
-    top: 22px;
-    right: 22px;
+    position: relative;
+    top: auto;
+    right: auto;
     z-index: 50;
     display: grid !important;
+    width: 50px;
+    height: 50px;
     opacity: 1;
     visibility: visible;
-    border-color: rgba(185, 147, 77, 0.78);
-    color: var(--gold-dark);
-    background: rgba(255, 255, 255, 0.86);
+    border: 1px solid rgba(211, 173, 97, 0.72);
+    border-radius: 50%;
+    color: #e3c47f;
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+    transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+  }
+
+  .menu-button:hover,
+  .menu-button[aria-expanded='true'] {
+    color: var(--deep);
+    background: #d3ad61;
+  }
+
+  .menu-button:active {
+    transform: scale(0.94);
+  }
+
+  .menu-button .material-symbols-outlined {
+    font-size: 28px;
+    transition: transform 0.25s ease;
+  }
+
+  .menu-button[aria-expanded='true'] .material-symbols-outlined {
+    transform: rotate(90deg);
   }
 
   .global-nav {
-    position: absolute;
-    top: calc(100% - 8px);
-    right: 22px;
-    display: none;
-    width: min(310px, calc(100vw - 44px));
-    padding: 18px;
-    background: rgba(16, 26, 28, 0.96);
-    box-shadow: var(--shadow);
+    position: fixed;
+    top: 94px;
+    right: max(4vw, 18px);
+    z-index: 45;
+    display: grid;
+    gap: 2px;
+    width: min(340px, 92vw);
+    max-height: calc(100dvh - 112px);
+    padding: 12px;
+    overflow-y: auto;
+    border: 1px solid rgba(211, 173, 97, 0.34);
+    border-radius: 12px;
+    background: rgba(13, 24, 23, 0.98);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.34);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-12px) scale(0.98);
+    transform-origin: top right;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
   }
 
   .global-nav.is-open {
-    display: grid;
-    gap: 4px;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
   }
 
   .global-nav a {
-    padding: 12px 10px;
+    position: relative;
+    padding: 14px 48px 14px 16px;
+    border-radius: 7px;
+    color: rgba(255, 255, 255, 0.92);
+  }
+
+  .global-nav a::after {
+    position: absolute;
+    top: 50%;
+    right: 18px;
+    color: var(--gold);
+    content: '›';
+    font-size: 24px;
+    line-height: 1;
+    transform: translateY(-54%);
+  }
+
+  .global-nav a:hover,
+  .global-nav a:focus-visible {
+    color: var(--white);
+    background: rgba(211, 173, 97, 0.14);
   }
 
   .nav-contact {
-    margin-top: 6px;
+    margin-top: 8px;
+    color: var(--deep) !important;
+    background: linear-gradient(135deg, #d7b368, #b98d42);
     text-align: center;
+  }
+
+  .nav-contact::after {
+    color: var(--deep) !important;
   }
 
   .mv {
@@ -1854,6 +1929,41 @@ h1 {
     inset: 0;
     width: 100%;
   }
+
+  .home-page .hero-points {
+    width: min(650px, calc(100% - 190px));
+  }
+
+  .home-page .hero-badge {
+    right: max(3vw, 18px);
+    width: 170px;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 800px) {
+  .home-page .features-text {
+    padding: 38px 24px;
+  }
+
+  .home-page .feature-list {
+    gap: 12px;
+    margin-top: 22px;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 700px) {
+  .home-page .hero-points {
+    grid-template-columns: 1fr;
+    width: min(220px, 100%);
+  }
+}
+
+@media (min-width: 701px) and (max-width: 980px) {
+  .home-page .hero-points {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 640px) {
@@ -1936,7 +2046,7 @@ h1 {
   }
 
   .home-page .features-visual img {
-    /* object-position: center; */
+    object-position: center;
     object-fit: cover;
   }
 
