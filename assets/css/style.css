@@ -104,7 +104,7 @@ textarea {
 .site-name {
   color: var(--white);
   font-family: var(--serif);
-  font-size: 16px;
+  font-size: 1.6rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   line-height: 1.2;
@@ -115,11 +115,13 @@ textarea {
   display: flex;
   align-items: center;
   gap: clamp(18px, 2.2vw, 32px);
-  font-size: 14px;
+  font-size: 1.6rem;
   font-weight: 700;
 }
 
 .global-nav a {
+  flex: 0 0 auto;
+  white-space: nowrap;
   transition:
     color 0.2s ease,
     background 0.2s ease;
@@ -210,13 +212,13 @@ textarea {
   margin: 0 0 18px;
   color: var(--gold-dark);
   font-family: var(--serif);
-  font-size: clamp(27px, 2.9vw, 36px);
+  font-size: clamp(2.7rem, 2.9vw, 3.6rem);
 }
 
 .mv h1 {
   margin: 0;
   font-family: var(--serif);
-  font-size: clamp(38px, 3.55vw, 52px);
+  font-size: clamp(3.8rem, 3.55vw, 5.2rem);
   font-weight: 600;
   line-height: 1.45;
   color: #17263c;
@@ -226,7 +228,7 @@ textarea {
   margin: 30px 0 34px;
   color: #3d4644;
   font-family: var(--serif);
-  font-size: clamp(21px, 2.1vw, 30px);
+  font-size: clamp(2.1rem, 2.1vw, 3rem);
   font-weight: 600;
 }
 
@@ -256,7 +258,7 @@ textarea {
   color: #263638;
   background: #fff;
   box-shadow: 0 10px 24px rgba(37, 44, 46, 0.08);
-  font-size: 14px;
+  font-size: 1.6rem;
   font-weight: 700;
 }
 
@@ -268,7 +270,7 @@ textarea {
   border: 1px solid var(--gold);
   border-radius: 50%;
   color: var(--gold);
-  font-size: 19px;
+  font-size: 1.9rem;
 }
 
 .hero-badge {
@@ -295,7 +297,7 @@ textarea {
 
 .hero-badge span {
   width: 100%;
-  font-size: clamp(10px, 0.96vw, 13px);
+  font-size: clamp(1rem, 0.96vw, 1.3rem);
   font-weight: 700;
   line-height: 1.55;
   white-space: nowrap;
@@ -306,7 +308,7 @@ textarea {
   width: 100%;
   margin-top: 4px;
   font-family: var(--serif);
-  font-size: clamp(16px, 1.9vw, 24px);
+  font-size: clamp(1.6rem, 1.9vw, 2.4rem);
   line-height: 1.38;
   letter-spacing: 0;
 }
@@ -358,7 +360,7 @@ h1 {
 }
 
 .section-title-line h2 {
-  font-size: clamp(22px, 2.2vw, 31px);
+  font-size: clamp(2.2rem, 2.2vw, 3.1rem);
 }
 
 .worry-grid {
@@ -380,7 +382,7 @@ h1 {
 
 .worry-item .material-symbols-outlined {
   color: #877f72;
-  font-size: 58px;
+  font-size: 5.8rem;
 }
 
 .worry-item p {
@@ -421,7 +423,7 @@ h1 {
   margin: 0 0 12px;
   color: var(--gold);
   font-family: Georgia, serif;
-  font-size: 13px;
+  font-size: 1.6rem;
   font-weight: 700;
   letter-spacing: 0.13em;
 }
@@ -429,7 +431,7 @@ h1 {
 .features h2,
 .portfolio h2,
 .flow h2 {
-  font-size: clamp(27px, 3vw, 42px);
+  font-size: clamp(2.7rem, 3vw, 4.2rem);
 }
 
 .feature-list {
@@ -439,7 +441,7 @@ h1 {
   margin: 30px 0 0;
   list-style: none;
   font-family: var(--serif);
-  font-size: clamp(18px, 1.6vw, 24px);
+  font-size: clamp(1.8rem, 1.6vw, 2.4rem);
 }
 
 .feature-list li {
@@ -450,7 +452,7 @@ h1 {
 
 .feature-list .material-symbols-outlined {
   color: var(--gold);
-  font-size: 25px;
+  font-size: 2.5rem;
 }
 
 .portfolio {
@@ -496,7 +498,7 @@ h1 {
 
 .portfolio-card h3 {
   margin: 0 0 12px;
-  font-size: 19px;
+  font-size: 1.9rem;
 }
 
 .portfolio-card p:last-child {
@@ -531,25 +533,25 @@ h1 {
   right: -19px;
   color: var(--gold);
   content: '›';
-  font-size: 28px;
+  font-size: 2.8rem;
 }
 
 .flow-number {
   margin: 0 0 22px;
   color: var(--gold);
   font-family: Georgia, serif;
-  font-size: 25px;
+  font-size: 2.5rem;
 }
 
 .flow-step .material-symbols-outlined {
   color: #81776c;
-  font-size: 54px;
+  font-size: 5.4rem;
 }
 
 .flow-step h3 {
   min-height: 58px;
   margin: 18px 0 8px;
-  font-size: 17px;
+  font-size: 2.3rem;
 }
 
 .flow-step p:last-child {
@@ -573,7 +575,7 @@ h1 {
 
 .bottom-contact h2 {
   margin-bottom: 8px;
-  font-size: clamp(28px, 3vw, 42px);
+  font-size: clamp(2.8rem, 3vw, 4.2rem);
 }
 
 .bottom-contact p {
@@ -603,7 +605,7 @@ h1 {
 }
 
 .large-contact-button .material-symbols-outlined:first-child {
-  font-size: 43px;
+  font-size: 4.3rem;
 }
 
 .large-contact-button small {
@@ -612,11 +614,11 @@ h1 {
   margin-bottom: 4px;
   padding: 1px 18px;
   border: 1px solid rgba(255, 255, 255, 0.45);
-  font-size: 13px;
+  font-size: 1.6rem;
 }
 
 .large-contact-button span:nth-child(2) {
-  font-size: 21px;
+  font-size: 2.1rem;
   font-weight: 700;
 }
 
@@ -639,7 +641,7 @@ h1 {
 
 .page-hero h1,
 .thanks-panel h1 {
-  font-size: clamp(32px, 4vw, 48px);
+  font-size: clamp(3.2rem, 4vw, 4.8rem);
 }
 
 .page-hero p:last-child {
@@ -676,7 +678,7 @@ h1 {
   padding: 1px 8px;
   color: var(--white);
   background: var(--gold);
-  font-size: 12px;
+  font-size: 1.6rem;
   font-style: normal;
 }
 
@@ -762,7 +764,7 @@ h1 {
 
 .free-design-cta__inner {
   display: grid;
-  grid-template-columns: 1fr minmax(380px, 560px);
+  grid-template-columns: 1fr minmax(30%, 45%);
   gap: 48px;
   align-items: center;
   max-width: 1180px;
@@ -772,7 +774,7 @@ h1 {
 .free-design-cta h2 {
   margin: 0 0 12px;
   font-family: var(--serif);
-  font-size: clamp(26px, 2.8vw, 40px);
+  font-size: clamp(2.6rem, 2.8vw, 4rem);
   font-weight: 600;
   line-height: 1.5;
 }
@@ -782,7 +784,7 @@ h1 {
 }
 
 .free-design-cta__button small {
-  font-size: 16px;
+  font-size: 1.6rem;
 }
 
 .form-page-hero {
@@ -870,7 +872,7 @@ h1 {
 .form-step h2 {
   margin: 0;
   font-family: var(--serif);
-  font-size: clamp(25px, 3vw, 34px);
+  font-size: clamp(2.5rem, 3vw, 3.4rem);
   font-weight: 600;
 }
 
@@ -1052,7 +1054,7 @@ h1 {
   padding: 8px 16px;
   color: var(--white);
   background: var(--deep-2);
-  font-size: 16px;
+  font-size: 1.6rem;
 }
 
 .upload-field output {
@@ -1080,7 +1082,7 @@ h1 {
 
 .option-grid small {
   color: var(--soft-ink);
-  font-size: 16px;
+  font-size: 1.6rem;
   font-weight: 500;
 }
 
@@ -1098,7 +1100,7 @@ h1 {
 .estimate-card h3 {
   margin: 0 0 10px;
   font-family: var(--serif);
-  font-size: 21px;
+  font-size: 2.1rem;
 }
 
 .free-includes ul,
@@ -1129,7 +1131,7 @@ h1 {
   display: block;
   color: var(--gold-dark);
   font-family: var(--serif);
-  font-size: clamp(32px, 4vw, 46px);
+  font-size: clamp(3.2rem, 4vw, 4.6rem);
   line-height: 1.3;
 }
 
@@ -1205,14 +1207,14 @@ h1 {
 
 .check-info-card > .material-symbols-outlined {
   color: var(--gold);
-  font-size: 48px;
+  font-size: 4.8rem;
 }
 
 .check-info-card h2,
 .application-conditions h2 {
   margin: 12px 0;
   font-family: var(--serif);
-  font-size: clamp(23px, 3vw, 32px);
+  font-size: clamp(2.3rem, 3vw, 3.2rem);
   font-weight: 600;
 }
 
@@ -1306,15 +1308,13 @@ h1 {
     background: rgba(12, 22, 22, 0.88);
     box-shadow: 0 10px 30px rgba(4, 12, 12, 0.16);
     backdrop-filter: blur(14px);
-    transition: background 0.25s ease, box-shadow 0.25s ease;
+    transition:
+      background 0.25s ease,
+      box-shadow 0.25s ease;
   }
 
   .sub-page main {
     padding-top: 82px;
-  }
-
-  .site-name {
-    display: none;
   }
 
   .site-logo {
@@ -1337,7 +1337,10 @@ h1 {
     color: #e3c47f;
     background: rgba(255, 255, 255, 0.06);
     box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
-    transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+    transition:
+      color 0.2s ease,
+      background 0.2s ease,
+      transform 0.2s ease;
   }
 
   .menu-button:hover,
@@ -1351,7 +1354,7 @@ h1 {
   }
 
   .menu-button .material-symbols-outlined {
-    font-size: 28px;
+    font-size: 2.8rem;
     transition: transform 0.25s ease;
   }
 
@@ -1379,7 +1382,10 @@ h1 {
     transform: translateY(-12px) scale(0.98);
     transform-origin: top right;
     pointer-events: none;
-    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease,
+      visibility 0.2s;
   }
 
   .global-nav.is-open {
@@ -1402,7 +1408,7 @@ h1 {
     right: 18px;
     color: var(--gold);
     content: '›';
-    font-size: 24px;
+    font-size: 2.4rem;
     line-height: 1;
     transform: translateY(-54%);
   }
@@ -1514,7 +1520,7 @@ h1 {
   }
 
   .site-name {
-    font-size: 14px;
+    font-size: 1.6rem;
   }
 
   .mv {
@@ -1557,12 +1563,12 @@ h1 {
   }
 
   .mv h1 {
-    font-size: clamp(30px, 8.6vw, 36px);
+    font-size: clamp(3rem, 8.6vw, 3.6rem);
     line-height: 1.5;
   }
 
   .hero-subtitle {
-    font-size: 18px;
+    font-size: 1.8rem;
     line-height: 1.7;
   }
 
@@ -1580,7 +1586,7 @@ h1 {
     justify-content: flex-start;
     min-height: 52px;
     padding-inline: 10px;
-    font-size: 14px;
+    font-size: 1.6rem;
   }
 
   .hero-badge {
@@ -1594,11 +1600,11 @@ h1 {
   }
 
   .hero-badge span {
-    font-size: 9px;
+    font-size: 0.9rem;
   }
 
   .hero-badge strong {
-    font-size: 16px;
+    font-size: 1.6rem;
   }
 
   .section-title-line {
@@ -1675,7 +1681,7 @@ h1 {
   }
 
   .step-nav li {
-    font-size: 16px;
+    font-size: 1.6rem;
   }
 
   .form-step {
@@ -1719,7 +1725,7 @@ h1 {
 
 @media (max-width: 430px) {
   .mv h1 {
-    font-size: clamp(27px, 8vw, 32px);
+    font-size: clamp(2.7rem, 8vw, 3.2rem);
     line-height: 1.35;
   }
 }
@@ -1739,7 +1745,7 @@ h1 {
 
 /* Top page: reference-lp.png alignment. Form and sub-page styles are intentionally unchanged. */
 .home-page {
-  font-size: 16px;
+  font-size: 1.6rem;
 }
 
 .home-page a:focus-visible {
@@ -1796,12 +1802,12 @@ h1 {
 
 .home-page .hero-lead {
   color: #d3ad61;
-  font-size: clamp(30px, 3vw, 46px);
+  font-size: clamp(3rem, 3vw, 4.6rem);
 }
 
 .home-page .mv h1 {
   color: var(--white);
-  font-size: clamp(46px, 4.7vw, 68px);
+  font-size: clamp(4.6rem, 4.7vw, 6.8rem);
   line-height: 1.42;
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
 }
@@ -1832,7 +1838,7 @@ h1 {
 }
 
 .home-page .hero-badge span {
-  font-size: 16px;
+  font-size: 1.6rem;
   white-space: normal;
 }
 
@@ -1904,7 +1910,32 @@ h1 {
 .home-page .section-kicker,
 .home-page .hero-points li,
 .home-page .large-contact-button small {
-  font-size: 16px;
+  font-size: 1.6rem;
+}
+
+@media (min-width: 981px) and (max-width: 1120px) {
+  .home-page .site-header {
+    gap: 16px;
+    padding-inline: max(3vw, 28px);
+  }
+
+  .home-page .site-logo {
+    gap: 8px;
+    max-width: 250px;
+    padding-right: 8px;
+  }
+
+  .home-page .global-nav {
+    gap: clamp(8px, 1vw, 12px);
+  }
+
+  .home-page .nav-contact {
+    padding: 11px 12px;
+  }
+
+  .home-page .hero-points {
+    width: min(630px, 86%);
+  }
 }
 
 @media (max-width: 980px) {
@@ -1948,7 +1979,7 @@ h1 {
   .home-page .feature-list {
     gap: 12px;
     margin-top: 22px;
-    font-size: 16px;
+    font-size: 1.6rem;
     line-height: 1.7;
   }
 }
@@ -1956,13 +1987,22 @@ h1 {
 @media (min-width: 641px) and (max-width: 700px) {
   .home-page .hero-points {
     grid-template-columns: 1fr;
-    width: min(220px, 100%);
+    justify-items: start;
+    width: 350px;
+    max-width: 350px;
+  }
+
+  .home-page .hero-points li {
+    justify-content: flex-start;
+    width: 350px;
+    padding-inline: 28px;
   }
 }
 
 @media (min-width: 701px) and (max-width: 980px) {
   .home-page .hero-points {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: min(650px, calc(100% - 100px));
   }
 }
 
@@ -1998,18 +2038,18 @@ h1 {
 
   .home-page .hero-lead {
     color: #d3ad61;
-    font-size: 24px;
+    font-size: 2.4rem;
   }
 
   .home-page .mv h1 {
     color: var(--white);
-    font-size: clamp(27px, 7.5vw, 30px);
+    font-size: clamp(2.7rem, 7.5vw, 3rem);
     line-height: 1.42;
   }
 
   .home-page .hero-subtitle {
     color: var(--white);
-    font-size: 16px;
+    font-size: 1.6rem;
   }
 
   .home-page .hero-points {
@@ -2028,7 +2068,7 @@ h1 {
   }
 
   .home-page .hero-badge strong {
-    font-size: 18px;
+    font-size: 1.8rem;
   }
 
   .home-page .worries,
@@ -2043,16 +2083,46 @@ h1 {
     width: 100%;
     height: clamp(230px, 68vw, 320px);
     min-height: 0;
+    background: var(--deep);
   }
 
   .home-page .features-visual img {
     object-position: center;
-    object-fit: cover;
+    object-fit: contain;
   }
 
   .home-page .features-text {
     width: 92%;
     padding: 38px 0 44px;
     margin: 0 auto;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 640px) {
+  .home-page .hero-badge {
+    top: clamp(400px, 54vw, 370px);
+    right: max(4vw, 12px);
+    bottom: auto;
+    left: auto;
+  }
+}
+
+@media (max-width: 500px) {
+  .home-page .mv {
+    min-height: 830px;
+  }
+
+  .home-page .hero-content {
+    padding-bottom: 18px;
+  }
+
+  .home-page .hero-badge {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    margin-right: max(4vw, 12px);
+    margin-left: auto;
+    margin-top: 12px;
   }
 }
