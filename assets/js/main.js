@@ -259,6 +259,8 @@ if (designForm) {
   const confirmationBackButton = document.getElementById('confirmation-back-button');
   const confirmationSubmitButton = document.getElementById('confirmation-submit-button');
   const validationMessage = document.getElementById('form-validation-message');
+  const turnstileContainer = document.getElementById('turnstile-widget');
+  const turnstileStatus = document.getElementById('turnstile-status');
   const confirmationSections = [
     {
       title: 'お客様・事業情報',
@@ -329,6 +331,74 @@ if (designForm) {
     },
   ];
   let confirmedSubmission = false;
+  let turnstileWidgetId = null;
+  let turnstilePending = false;
+
+  const setTurnstileStatus = (message = '', isError = false) => {
+    if (!turnstileStatus) return;
+    turnstileStatus.textContent = message;
+    turnstileStatus.hidden = !message;
+    turnstileStatus.classList.toggle('is-error', isError);
+  };
+
+  const resetTurnstileSubmission = (message, isError = false) => {
+    turnstilePending = false;
+    confirmedSubmission = false;
+    confirmationSubmitButton.disabled = false;
+    confirmationSubmitButton.textContent = 'この内容を送信する';
+    setTurnstileStatus(message, isError);
+  };
+
+  const setTurnstileResponse = (token) => {
+    let responseField = designForm.querySelector('input[name="cf-turnstile-response"]');
+    if (!responseField) {
+      responseField = document.createElement('input');
+      responseField.type = 'hidden';
+      responseField.name = 'cf-turnstile-response';
+      designForm.append(responseField);
+    }
+    responseField.value = token;
+  };
+
+  const renderTurnstile = () => {
+    if (turnstileWidgetId !== null) return true;
+    if (!turnstileContainer || !turnstileContainer.dataset.sitekey || !window.turnstile) return false;
+
+    try {
+      turnstileWidgetId = window.turnstile.render(turnstileContainer, {
+        sitekey: turnstileContainer.dataset.sitekey,
+        action: 'lp_design_application',
+        execution: 'execute',
+        appearance: 'interaction-only',
+        language: 'ja',
+        theme: 'light',
+        'response-field': false,
+        callback: (token) => {
+          if (!turnstilePending) return;
+          setTurnstileResponse(token);
+          confirmedSubmission = true;
+          confirmationSubmitButton.textContent = '送信しています…';
+          setTurnstileStatus('認証が完了しました。送信しています。');
+          designForm.requestSubmit();
+        },
+        'error-callback': () => {
+          resetTurnstileSubmission('認証を完了できませんでした。通信環境をご確認のうえ、もう一度お試しください。', true);
+          return true;
+        },
+        'expired-callback': () => {
+          resetTurnstileSubmission('認証の有効期限が切れました。もう一度送信してください。', true);
+        },
+        'timeout-callback': () => {
+          resetTurnstileSubmission('認証がタイムアウトしました。もう一度送信してください。', true);
+        },
+      });
+    } catch {
+      turnstileWidgetId = null;
+      return false;
+    }
+
+    return true;
+  };
 
   const createConfirmationContent = () => {
     if (!confirmationContent) return;
@@ -428,6 +498,9 @@ if (designForm) {
   });
 
   confirmationBackButton?.addEventListener('click', () => {
+    if (turnstileWidgetId !== null && window.turnstile) window.turnstile.reset(turnstileWidgetId);
+    designForm.querySelector('input[name="cf-turnstile-response"]')?.remove();
+    resetTurnstileSubmission();
     confirmationPanel.hidden = true;
     designForm.hidden = false;
     scrollToElement(designForm);
@@ -435,10 +508,17 @@ if (designForm) {
   });
 
   confirmationSubmitButton?.addEventListener('click', () => {
-    confirmedSubmission = true;
+    if (turnstilePending) return;
+    if (!renderTurnstile()) {
+      resetTurnstileSubmission('認証機能を読み込めませんでした。ページを再読み込みしてお試しください。', true);
+      return;
+    }
+
+    turnstilePending = true;
     confirmationSubmitButton.disabled = true;
-    confirmationSubmitButton.textContent = '送信しています…';
-    designForm.requestSubmit();
+    confirmationSubmitButton.textContent = '認証しています…';
+    setTurnstileStatus('安全に送信するため、セキュリティ確認を行っています。');
+    window.turnstile.execute('#turnstile-widget');
   });
 }
 
