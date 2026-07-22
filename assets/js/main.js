@@ -261,6 +261,8 @@ if (designForm) {
   const validationMessage = document.getElementById('form-validation-message');
   const turnstileContainer = document.getElementById('turnstile-widget');
   const turnstileStatus = document.getElementById('turnstile-status');
+  const emailInput = designForm.elements.namedItem('メールアドレス');
+  const emailPattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?(?:\.[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?)+$/;
   const confirmationSections = [
     {
       title: 'お客様・事業情報',
@@ -333,6 +335,28 @@ if (designForm) {
   let confirmedSubmission = false;
   let turnstileWidgetId = null;
   let turnstilePending = false;
+
+  const validateEmail = () => {
+    if (!(emailInput instanceof HTMLInputElement)) return;
+
+    const value = emailInput.value;
+    emailInput.setCustomValidity('');
+    if (!value) return;
+
+    if (/[^\x20-\x7E]/.test(value)) {
+      emailInput.setCustomValidity('メールアドレスは半角英数字・記号で入力してください。');
+      return;
+    }
+
+    if (!emailPattern.test(value)) {
+      emailInput.setCustomValidity('正しいメールアドレス形式で入力してください。');
+    }
+  };
+
+  if (emailInput instanceof HTMLInputElement) {
+    emailInput.addEventListener('input', validateEmail);
+    emailInput.addEventListener('change', validateEmail);
+  }
 
   const setTurnstileStatus = (message = '', isError = false) => {
     if (!turnstileStatus) return;
@@ -481,6 +505,7 @@ if (designForm) {
     if (confirmedSubmission) return;
 
     event.preventDefault();
+    validateEmail();
 
     if (!designForm.checkValidity()) {
       showValidationErrors();
