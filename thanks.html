@@ -2,33 +2,81 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
+  <meta name="robots" content="noindex">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="LOCAL WEB DESIGNへのお問い合わせ完了ページです。">
-  <title>お問い合わせありがとうございます | LOCAL WEB DESIGN</title>
+  <meta name="description" content="Local web designsへのお申し込み完了ページです。">
+  <title>お申し込みありがとうございます | Local web designs</title>
+  <meta property="og:title" content="お申し込みありがとうございます | Local web designs">
+  <meta property="og:description" content="Local web designsへのお申し込み完了ページです。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://local-web-designs.com/thanks.html">
+  <meta property="og:site_name" content="Local web designs">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="./assets/images/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="./assets/images/favicon.svg">
+  <link rel="shortcut icon" href="./assets/images/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/apple-touch-icon.png">
+  <link rel="manifest" href="./assets/images/site.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Serif+JP:wght@500;600;700&family=Sour+Gummy:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/style.css?v=20260722-2">
 </head>
 <body class="sub-page">
   <header class="site-header sub-header">
-    <a class="site-logo" href="./index.html" aria-label="LOCAL WEB DESIGN トップページ">
-      <img src="./assets/images/logo.webp" alt="" class="logo-mark">
-      <span class="site-name">LOCAL WEB DESIGN</span>
+    <a class="site-logo" href="./index.html" aria-label="Local web designs トップページ">
+      <img src="./assets/images/logo.png" alt="">
+      <span class="site-name">Local web designs</span>
     </a>
+    <button class="menu-button" type="button" aria-label="メニューを開閉する" aria-controls="global-nav" aria-expanded="false">
+      <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+    </button>
+    <nav class="global-nav" id="global-nav" aria-label="グローバルナビゲーション">
+      <a href="./index.html#features">サービスの特徴</a>
+      <a href="./index.html#flow">制作の流れ</a>
+      <a href="./index.html#portfolio">制作例</a>
+      <a href="./index.html#pricing">料金プラン</a>
+      <a href="./index.html#faq">よくある質問</a>
+    </nav>
   </header>
 
   <main>
     <section class="thanks-panel" aria-labelledby="thanks-title">
       <p class="section-kicker">Thank you</p>
-      <h1 id="thanks-title">お問い合わせありがとうございます</h1>
-      <p>内容を確認のうえ、折り返しご連絡いたします。<br>通常、2営業日以内にご返信いたします。</p>
+      <h1 id="thanks-title">お申し込みありがとうございます</h1>
+      <p>お申し込み内容を確認のうえ、折り返しご連絡いたします。<br>通常、2営業日以内にご返信いたします。</p>
       <a class="primary-button" href="./index.html">トップページへ戻る</a>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <small>&copy; LOCAL WEB DESIGN</small>
+  <footer class="site-footer home-footer home-footer--compact">
+    <div class="home-footer__inner">
+      <div class="home-footer__brand">
+        <a class="home-footer__logo" href="./index.html" aria-label="Local web designs トップページ">
+          <img src="./assets/images/logo.png" alt="">
+          <span>Local web designs</span>
+        </a>
+        <p>小規模事業者向けの、シンプルで見やすい1ページホームページを制作します。</p>
+      </div>
+      <nav class="home-footer__nav" aria-label="フッターナビゲーション">
+        <p class="home-footer__title">CONTENTS</p>
+        <div>
+          <a href="./index.html#features">サービスの特徴</a>
+          <a href="./index.html#flow">制作の流れ</a>
+          <a href="./index.html#portfolio">制作例</a>
+          <a href="./index.html#pricing">料金プラン</a>
+          <a href="./index.html#faq">よくある質問</a>
+        </div>
+      </nav>
+    </div>
+    <div class="home-footer__bottom">
+      <div class="footer-legal-links">
+        <a class="footer-policy" href="./privacy-policy.html">プライバシーポリシー</a>
+        <a class="footer-policy" href="./law.html">特定商取引法に基づく表記</a>
+      </div>
+      <small>&copy; 2026 Local web designs. All rights reserved.</small>
+    </div>
   </footer>
+  <script src="./assets/js/main.js?v=20260722-1"></script>
 </body>
 </html>
